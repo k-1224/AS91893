@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #080307;
+  color: #FFFFFF;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F0BB78;
+  padding: 0 20px;
+  height: 4em;
+}
+
+header h2 {
+  font-family: 'Chonburi', serif;
+  font-size: 1.8em;
+  color: #080307;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  display: flex;
+  margin: 0 0.8em;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #080307;
+  font-size: 1em;
+}
+
+nav a:active {
+  opacity: 0.6;
+}
+
+#change {
+  text-decoration: underline black;
+  text-underline-offset: 4px;
+}
+
+.register-btn {
+  display: flex;
+  gap: 8px;
+}
+
+.register-btn a {
+  text-decoration: none;
+  color: #080307;
+  font-size: 0.9em;
+  padding: 6px 14px;
+  border: 1.5px solid #080307;
+  border-radius: 4px;
+}
+
+.register-btn a:last-child {
+  background-color: #080307;
+  color: #F0BB78;
+}
+
