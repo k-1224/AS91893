@@ -5,6 +5,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+ 
+/*OVERALL*/
 
 body {
   background-color: #080307;
@@ -12,7 +14,8 @@ body {
   font-family: 'Merriweather Sans', sans-serif;
 }
 
-/*header-banner bg*/
+/*INDEX PAGE*/
+  /*HEADER BANNER BG*/
 
 .home-bg-img {
   background-image: url(..//IMG/eiliv-aceron-q4pns2LtGwk-unsplash.jpg);
@@ -22,7 +25,8 @@ body {
   background-blend-mode: multiply;
 }
 
-/*HEADER SECTION*/
+/*OVERALL*/
+  /*HEADER SECTION*/
 
 header {
   display: flex;
@@ -31,6 +35,25 @@ header {
   justify-content: space-between;
   padding: 0 20px;
   height: 4em;
+  position: sticky; /*STICKY NAV WHEN SCROLL*/
+  top: 0;
+  z-index: 100;
+
+  animation: header-bg linear both;
+  animation-timeline: scroll();
+  animation-range: 0px 80px;
+}
+
+/*BACKGROUND COLOR TRANSITION WHEN SCROLL DOWN*/
+@keyframes header-bg {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba(8, 3, 7, 0.92);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
 }
 
 header h2 {
@@ -119,7 +142,8 @@ nav a:active {
   font-size: 0.95em;
 }
 
-/*ICON*/
+/*INDEX PAGE*/
+  /*ICON*/
 
 .learn-dish-icon, 
 .location-restaurant-icon,
@@ -127,8 +151,8 @@ nav a:active {
   text-decoration: none;
 }
 
-
-/*SEARCH BAR*/
+/*INDEX PAGE*/
+  /*SEARCH BAR*/
 
 .search {
   display: flex;
@@ -197,7 +221,8 @@ nav a:active {
   color: #080307;
 }
 
-/*ICON*/
+/*INDEX PAGE*/
+  /*ICON*/
 
 #search-icon {
   color: black;
@@ -247,9 +272,7 @@ nav a:active {
   color: white;
 }
 
-
 /*FOOTER SECTION*/
-
 footer {
   height: 40vh;
   background-color: black;
