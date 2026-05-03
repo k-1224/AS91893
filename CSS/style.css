@@ -28,7 +28,7 @@ body {
 /*OVERALL*/
   /*HEADER SECTION*/
 
-header {
+.header-index {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -44,6 +44,7 @@ header {
   animation-range: 0px 80px;
 }
 
+
 /*BACKGROUND COLOR TRANSITION WHEN SCROLL DOWN*/
 @keyframes header-bg {
   from {
@@ -54,6 +55,18 @@ header {
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   }
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 4em;
+  position: sticky; /*STICKY NAV WHEN SCROLL*/
+  top: 0;
+  background-color: #080307;
 }
 
 header h2 {
@@ -271,6 +284,121 @@ nav a:active {
   border: 2px solid black;
   color: white;
 }
+
+/*CONTACT PAGE*/
+
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #fff9e9;
+  color: #080307;
+  min-height: 100vh;
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 900px;
+  align-items: flex-start;
+}
+
+.contact-left {
+  flex: 1;
+  padding-top: 20px;
+}
+
+.contact-left h2 {
+  font-size: 1.8em;
+  margin-bottom: 14px;
+  color: #080307;
+}
+
+.contact-left p {
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.7;
+}
+
+/*CONTACT PAGE*/
+  /*FEEDBACK FORM*/
+.contact-right {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #e0d9c8;
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.form-above {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.form-below {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-field input,
+.form-field textarea {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #080307;
+  background-color: #fafafa;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #E8A020;
+  background-color: #fff;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #080307;
+  color: #fcfeff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.submit-btn:active {
+  opacity: 0.9;
+}
+
 
 /*FOOTER SECTION*/
 footer {
