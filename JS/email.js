@@ -1,13 +1,21 @@
 function sendMail() {
-  let parms = {
-    firstname : document.getElementById("firstname"),
-    email : document.getElementById("email"),
-    subject : document.getElementById("subject"),
-    feedback : document.getElementById("feedback"),
+  const templateParams = {
+    firstname : document.querySelector("#firstname").value,
+    email     : document.querySelector("#email").value,
+    subject   : document.querySelector("#subject").value,
+    feedback  : document.querySelector("#feedback").value,
   };
-
-  emailjs.send("service_7z7fes1", "template_1uwwhys", parms)
-  .then(alert("Email Sent!!")).else("error")
+  
+if (!firstname || !email || !subject || !feedback) {
+  return false;
 }
+
+  emailjs.send("service_7z7fes1", "template_1uwwhys", templateParams)
+    .then(() => {
+      alert("Email Sent!");
+    })
+}
+
+
 
     
