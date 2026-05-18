@@ -452,6 +452,48 @@ hr {
   opacity: 0.9;
 }
 
+/*CUISINE PAGE*/
+
+.cuisines-page {
+  display: flex;
+  padding: 60px 20px;
+  background-color: #fff9e9;
+  color: #080307;
+  max-height: 100vh;
+  height: 100vh;
+  border: 2px solid orange;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.upper-text {
+  margin-bottom: 20px;
+
+}
+
+.card-container {
+  display: inline-flexbox;
+  height: 450px;
+  width: 253px;
+  border: 2px solid orange;
+  background-color: orange;
+}
+
+.card-image img {
+  height: 250px;
+
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
 
 /*FOOTER SECTION*/
 footer {
