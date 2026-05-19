@@ -29,7 +29,7 @@
         <h1>Popular Cuisines</h1>
       </div>
       <div class="card-group">
-        <div class="card-container" onclick="openModal('Sisig','Dish','ti-bowl-chopsticks','A sizzling Pampanga classic made from chopped pig\'s face and ears, seasoned with calamansi, chili, and onions on a hot cast-iron plate. Created by Lucia Cunanan in the 1970s, it has since evolved into pork belly, chicken, tuna, and tofu versions.','Pampanga, Philippines','Pork · Spicy · Sizzling')">
+        <div class="card-container" onclick="openModal('Sisig','Dish','ti-bowl-chopsticks','A sizzling Pampanga classic made from chopped pig\'s face and ears, seasoned with calamansi, chili, and onions on a hot cast-iron plate. Created by Lucia Cunanan in the 1970s, it has since evolved into pork belly, chicken, tuna, and tofu versions.','Pampanga, Philippines','Pork · Spicy · Sizzling' ,'/IMG/Bangus Sisig (Milkfish Sisig).jpg')">
           <div class="card-image">
             <img src="/IMG/Bangus Sisig (Milkfish Sisig).jpg" alt="Sisig">
           </div>
@@ -38,9 +38,9 @@
             <h3 class="card-title">Sisig</h3>
           </div>
         </div> 
-        <div class="card-container" onclick="openModal('Sisig','Dish','ti-bowl-chopsticks','A sizzling Pampanga classic made from chopped pig\'s face and ears, seasoned with calamansi, chili, and onions on a hot cast-iron plate. Created by Lucia Cunanan in the 1970s, it has since evolved into pork belly, chicken, tuna, and tofu versions.','Pampanga, Philippines','Pork · Spicy · Sizzling')">
+        <div class="card-container" onclick="openModal('Sinigang','Dish','ti-bowl-chopsticks','Your sinigang description here...','Luzon, Philippines','Beef · Sour · Soup', '/IMG/Sinigang Na Baka.jpg')">
           <div class="card-image">
-            <img src="/IMG/Bangus Sisig (Milkfish Sisig).jpg" alt="Sisig">
+            <img src="/IMG/Sinigang Na Baka.jpg" alt="Sisig">
           </div>
           <div class="card-hover-label">
             <span class="card-tag">Dish</span>
@@ -96,23 +96,38 @@
       </div>
     </div>
     <!--SCRIPT FOR MODAL TO WORK-->
-    <script>
-      function openModal(title, tag, icon, desc, origin, tags) {
-        document.getElementById('modal-title').textContent = title;
-        document.getElementById('modal-tag').textContent = tag;
-        document.getElementById('modal-icon').className = 'ti ti-' + icon;
-        document.getElementById('modal-icon').style.cssText = 'font-size:52px;color:#E8A020;';
-        document.getElementById('modal-desc').textContent = desc;
-        document.getElementById('modal-origin').textContent = origin;
-        document.getElementById('modal-tags').textContent = tags;
-        document.getElementById('modal').classList.add('open');
+  <script>
+    function openModal(title, tag, icon, desc, origin, tags, imgSrc) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-tag').textContent = tag;
+      document.getElementById('modal-desc').textContent = desc;
+      document.getElementById('modal-origin').textContent = origin;
+      document.getElementById('modal-tags').textContent = tags;
+
+      const imgEl = document.getElementById('modal-img-el');
+      const iconEl = document.getElementById('modal-icon');
+
+      if (imgSrc) {
+        imgEl.src = imgSrc;
+        imgEl.alt = title;
+        imgEl.style.display = 'block';   // show image
+        iconEl.style.display = 'none';   // hide icon
+      } else {
+        imgEl.style.display = 'none';    // hide image
+        iconEl.className = 'ti ti-' + icon;
+        iconEl.style.display = 'block';  // show icon
       }
-      function closeModal() {
-        document.getElementById('modal').classList.remove('open');
-      }
-      function closeOnOverlay(e) {
-        if (e.target === document.getElementById('modal')) closeModal();
-      }
-    </script>      
+
+      document.getElementById('modal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+    }
+
+    function closeOnOverlay(e) {
+      if (e.target === document.getElementById('modal')) closeModal();
+    }
+  </script>   
   </body>
 </html> 
