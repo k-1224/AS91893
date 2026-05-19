@@ -66,6 +66,7 @@ header {
   height: 4em;
   position: sticky; /*STICKY NAV WHEN SCROLL*/
   top: 0;
+  z-index: 1;
   background-color: #080307;
 }
 
@@ -459,8 +460,8 @@ hr {
   padding: 60px 20px;
   background-color: #fff9e9;
   color: #080307;
-  max-height: 100vh;
-  height: 100vh;
+  min-height: 100vh;
+  height: 200vh;
   border: 2px solid orange;
   overflow: hidden;
   flex-direction: column;
@@ -468,27 +469,204 @@ hr {
   margin-bottom: 20px;
 }
 
+.card-group {
+  display: flex;
+}
+
 .upper-text {
   margin-bottom: 20px;
-
 }
 
 .card-container {
-  display: inline-flexbox;
-  height: 450px;
-  width: 253px;
-  border: 2px solid orange;
-  background-color: orange;
+  width: 250px;
+  height: 250px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin-right: 18px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
 }
 
 .card-image img {
-  height: 250px;
-
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.card-body {
+.card-container:hover .card-image img {
+  transform: scale(1.07);
+}
+
+.card-hover-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 18px 18px;
+  background: linear-gradient(to top, rgba(8,3,7,0.88) 60%, transparent);
+  transform: translateY(0%);
+  transition: transform 0.35s ease;
   display: flex;
   flex-direction: column;
+  gap: 4px;
+}
+
+.card-hover-label .card-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #E8A020;
+}
+
+.card-hover-label .card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  font-family: 'Chonburi', serif;
+}
+
+.card-body .card-tag {
+  display: flex;
+  justify-content: center;
+  background-color:#fef7e4;
+  width:3.5em;
+  border-radius: 8px;
+  color:#a06800;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 6px;
+}
+
+.card-body .card-title {
+  margin: 4px 6px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card-body .card-context {
+  margin: 0 6px;
+  color: #555;
+  font-size: 14.5px;
+}
+
+
+.lower-text {
+  margin-top: 20px;
+  border: 2px solid orange;
+}
+
+/*MODAL*/
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 3, 7, 0.75);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.modal-overlay.open {
+  display: flex;
+}
+ 
+.modal-box {
+  background: #fff9e9;
+  border-radius: 18px;
+  width: 360px;
+  max-width: 92vw;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+ 
+.modal-img {
+  width: 100%;
+  height: 180px;
+  background: #080307;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.modal-body {
+  padding: 20px 22px 24px;
+}
+ 
+.modal-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #fff3d6;
+  color: #a06800;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+ 
+.modal-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #080307;
+  font-family: 'Chonburi', serif;
+  margin: 0 0 10px;
+}
+ 
+.modal-desc {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+ 
+.modal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid #e8dfc8;
+  padding-top: 16px;
+}
+ 
+.modal-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #666;
+}
+ 
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: rgba(8, 3, 7, 0.55);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+}
+ 
+.modal-close:hover {
+  background: rgba(8, 3, 7, 0.85);
 }
 
 

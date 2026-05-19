@@ -26,24 +26,32 @@
     </header>
     <main class="cuisines-page">
       <div class="upper-text">
-        <h1>Popular Cuisine</h1>
+        <h1>Popular Cuisines</h1>
       </div>
-      <div class="media-scroller">
-        <div class="media-element">
-          <div class="card-container">
-            <div class="card-image">
-              <img src="/IMG/Bangus Sisig (Milkfish Sisig).jpg" alt="Sisig">
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Dish</span>
-              <h3 class="card-title">Sisig</h3>
-              <p class="card-context">Sisig is a sizzling Filipino dish originating from Pampanga, traditionally made from chopped pig's face and ears, seasoned with calamansi, chili, and onions, and served on a hot cast-iron plate.</p>
-            </div>
-          </div>  
-        </div>
+      <div class="card-group">
+        <div class="card-container" onclick="openModal('Sisig','Dish','ti-bowl-chopsticks','A sizzling Pampanga classic made from chopped pig\'s face and ears, seasoned with calamansi, chili, and onions on a hot cast-iron plate. Created by Lucia Cunanan in the 1970s, it has since evolved into pork belly, chicken, tuna, and tofu versions.','Pampanga, Philippines','Pork · Spicy · Sizzling')">
+          <div class="card-image">
+            <img src="/IMG/Bangus Sisig (Milkfish Sisig).jpg" alt="Sisig">
+          </div>
+          <div class="card-hover-label">
+            <span class="card-tag">Dish</span>
+            <h3 class="card-title">Sisig</h3>
+          </div>
+        </div> 
+        <div class="card-container" onclick="openModal('Sisig','Dish','ti-bowl-chopsticks','A sizzling Pampanga classic made from chopped pig\'s face and ears, seasoned with calamansi, chili, and onions on a hot cast-iron plate. Created by Lucia Cunanan in the 1970s, it has since evolved into pork belly, chicken, tuna, and tofu versions.','Pampanga, Philippines','Pork · Spicy · Sizzling')">
+          <div class="card-image">
+            <img src="/IMG/Bangus Sisig (Milkfish Sisig).jpg" alt="Sisig">
+          </div>
+          <div class="card-hover-label">
+            <span class="card-tag">Dish</span>
+            <h3 class="card-title">Sisig</h3>
+          </div>
+        </div>          
+      </div>
+      <div class="lower-text">
+        <h1>Main Cuisines</h1>
       </div>
     </main>
-
     <footer>
       <div class="first-layer">
         <div class="footer-site">
@@ -67,6 +75,44 @@
       <div class="second-layer">
         <p> &copy; 2026 Kusinang Ina. All rights reserved.</p>
       </div>
-    </footer>      
+    </footer>
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal" onclick="closeOnOverlay(event)">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
+        <div class="modal-img">
+          <img id="modal-img-el" src="/IMG/Bangus Sisig (Milkfish Sisig).jpg" alt="Sisig" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <i id="modal-icon" style="font-size:52px;color:#E8A020;"></i>
+        </div>
+        <div class="modal-body">
+          <span class="modal-tag" id="modal-tag"></span>
+          <h3 class="modal-title" id="modal-title"></h3>
+          <p class="modal-desc" id="modal-desc"></p>
+          <div class="modal-meta">
+            <div class="modal-meta-row">📍 <span id="modal-origin"></span></div>
+            <div class="modal-meta-row">🏷 <span id="modal-tags"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--SCRIPT FOR MODAL TO WORK-->
+    <script>
+      function openModal(title, tag, icon, desc, origin, tags) {
+        document.getElementById('modal-title').textContent = title;
+        document.getElementById('modal-tag').textContent = tag;
+        document.getElementById('modal-icon').className = 'ti ti-' + icon;
+        document.getElementById('modal-icon').style.cssText = 'font-size:52px;color:#E8A020;';
+        document.getElementById('modal-desc').textContent = desc;
+        document.getElementById('modal-origin').textContent = origin;
+        document.getElementById('modal-tags').textContent = tags;
+        document.getElementById('modal').classList.add('open');
+      }
+      function closeModal() {
+        document.getElementById('modal').classList.remove('open');
+      }
+      function closeOnOverlay(e) {
+        if (e.target === document.getElementById('modal')) closeModal();
+      }
+    </script>      
   </body>
 </html> 
