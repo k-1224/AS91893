@@ -76,6 +76,10 @@ header h2 {
   color: white;
 }
 
+.filler-to-fix-validation {
+  display:none;
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -461,7 +465,7 @@ hr {
   background-color: #fff9e9;
   color: #080307;
   min-height: 100vh;
-  height: 200vh;
+  height: 150vh;
   border: 2px solid orange;
   overflow: hidden;
   flex-direction: column;
@@ -471,6 +475,7 @@ hr {
 
 .card-group {
   display: flex;
+  margin: 10px 0px;
 }
 
 .upper-text {
@@ -561,7 +566,11 @@ hr {
 
 .lower-text {
   margin-top: 20px;
-  border: 2px solid orange;
+  margin-bottom: 20px;
+}
+
+.lower-text h2 {
+  font-size: 32px;
 }
 
 /*MODAL*/
